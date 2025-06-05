@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Подключение к iPhone 12 Pro Max</title>
+    <script>
+        // Авто-редирект для Android и iOS
+        if (/Android/i.test(navigator.userAgent)) {
+            window.location.href = "intent://wifi/#Intent;scheme=android;package=com.android.settings;end";
+        } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            window.location.href = "App-Prefs:root=INTERNET_TETHERING";
+        }
+    </script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        button { background: #007AFF; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Подключиться к iPhone 12 Pro Max</h1>
+    <p>Пароль: <code>12345678</code></p>
+    <button onclick="window.location.href='App-Prefs:root=INTERNET_TETHERING'">Открыть настройки</button>
+</body>
+</html>
